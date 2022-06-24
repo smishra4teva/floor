@@ -1,4 +1,4 @@
-import 'package:sqflite/sqflite.dart' as sqflite;
+import 'package:sqflite_common/sqlite_api.dart' as sqlite_api;
 
 /// Base class for a database migration.
 ///
@@ -12,7 +12,7 @@ class Migration {
   final int endVersion;
 
   /// Function that performs the migration.
-  final Future<void> Function(sqflite.Database database) migrate;
+  final Future<void> Function(sqlite_api.Database database) migrate;
 
   /// Creates a new migration between [startVersion] and [endVersion].
   /// [migrate] will be called by the database and performs the actual

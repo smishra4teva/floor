@@ -76,8 +76,11 @@ class TasksListView extends StatelessWidget {
 
           final tasks = snapshot.requireData;
 
-          return ListView.builder(
+          return ListView.separated(
             itemCount: tasks.length,
+            separatorBuilder: (_, index) {
+              return const Divider();
+            },
             itemBuilder: (_, index) {
               return TaskListCell(
                 task: tasks[index],
@@ -134,7 +137,7 @@ class TasksTextField extends StatelessWidget {
   TasksTextField({
     Key? key,
     required this.dao,
-  })   : _textEditingController = TextEditingController(),
+  })  : _textEditingController = TextEditingController(),
         super(key: key);
 
   @override

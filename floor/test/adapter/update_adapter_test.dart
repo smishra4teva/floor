@@ -1,7 +1,7 @@
 import 'package:floor/floor.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:sqflite/sqflite.dart';
+import 'package:sqflite_common/sqlite_api.dart';
 
 import '../test_util/mocks.dart';
 import '../test_util/person.dart';

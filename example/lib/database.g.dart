@@ -63,9 +63,9 @@ class _$FlutterDatabase extends FlutterDatabase {
 
   TaskDao? _taskDaoInstance;
 
-  Future<sqflite.Database> open(String path, List<Migration> migrations,
+  Future<sqlite_api.Database> open(String path, List<Migration> migrations,
       [Callback? callback]) async {
-    final databaseOptions = sqflite.OpenDatabaseOptions(
+    final databaseOptions = sqlite_api.OpenDatabaseOptions(
       version: 1,
       onConfigure: (database) async {
         await database.execute('PRAGMA foreign_keys = ON');
@@ -120,7 +120,7 @@ class _$TaskDao extends TaskDao {
                 <String, Object?>{'id': item.id, 'message': item.message},
             changeListener);
 
-  final sqflite.DatabaseExecutor database;
+  final sqlite_api.DatabaseExecutor database;
 
   final StreamController<String> changeListener;
 
