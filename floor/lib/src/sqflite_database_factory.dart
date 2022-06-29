@@ -24,7 +24,7 @@ final DatabaseFactory sqfliteDatabaseFactory = () {
 
 extension DatabaseFactoryExtension on DatabaseFactory {
   Future<String> getDatabasePath(final String name) async {
-    final filePath = await getApplicationDocumentsDirectory();
+    final filePath = await getApplicationSupportDirectory();
     final databasePath = '${filePath.path}/$name';
     return join(databasePath, name);
   }
